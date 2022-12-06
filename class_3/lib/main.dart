@@ -58,6 +58,10 @@ class Home extends StatelessWidget {
                 image: NetworkImage(
                     'https://images.unsplash.com/photo-1670195280352-12edb06125cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')),
           ),
+          const SizedBox(
+            width: 20,
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text("Click Me")),
         ],
       ),
     );
@@ -73,4 +77,6 @@ class Home extends StatelessWidget {
 // image              (Done)
 // icon               (Done)
 // container          (Done)
-// elevated button  
+// floating action button   (Done)
+// Sizedbox                 (Done)
+// elevated button          (Done)

@@ -40,6 +40,6 @@ class Home extends StatelessWidget {
 
 
 // MediaQuery
-// padding
-// margin
-// 
+// padding (outside)
+// margin  (inner side)
+// TextStyle

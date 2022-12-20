@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -93,6 +91,19 @@ class _HomeState extends State<Home> {
                 onPressed: () {},
                 child: const Text("Text Button",
                     style: TextStyle(fontSize: 12, color: Colors.white))),
+          ),
+//------------------------------------------------------------------------------------------------
+// steps for using asset image in project
+
+// Download the image from any website and add it to the assets folder
+// then go to pubspec.yaml file and add the image path in the assets section
+// then run the command flutter pub get
+// then you can use the image in your project
+          Container(
+            width: 100,
+            height: 100,
+            color: Colors.black,
+            child: Image.asset('assets/image1.jpg', fit: BoxFit.cover),
           )
         ]),
       ),
@@ -110,3 +121,4 @@ class _HomeState extends State<Home> {
 // listTile       (Done)
 // ListView       (Done)
 // SingleChildScrollView (Done)
+// Image.asset()          (Done)

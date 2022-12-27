@@ -1,10 +1,21 @@
+// ignore_for_file: unused_local_variable, avoid_print
+
+import 'package:class_7/screens/output.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    int weight = 0;
+    int age = 0;
+
     return Scaffold(
         backgroundColor: Colors.black87,
         appBar: AppBar(
@@ -84,9 +95,9 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        const Text(
-                          '60',
-                          style: TextStyle(
+                        Text(
+                          weight.toString(),
+                          style: const TextStyle(
                             fontSize: 50,
                             fontWeight: FontWeight.w900,
                             color: Colors.white,
@@ -96,7 +107,13 @@ class HomeScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FloatingActionButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+
+                                print(weight);
+                              },
                               backgroundColor: Colors.redAccent,
                               child: const Icon(
                                 Icons.remove,
@@ -107,7 +124,12 @@ class HomeScreen extends StatelessWidget {
                               width: 10,
                             ),
                             FloatingActionButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                                print(weight);
+                              },
                               backgroundColor: Colors.redAccent,
                               child: const Icon(
                                 Icons.add,
@@ -130,9 +152,9 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        const Text(
-                          '60',
-                          style: TextStyle(
+                        Text(
+                          age.toString(),
+                          style: const TextStyle(
                             fontSize: 50,
                             fontWeight: FontWeight.w900,
                             color: Colors.white,
@@ -142,7 +164,13 @@ class HomeScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FloatingActionButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+
+                                print(age);
+                              },
                               backgroundColor: Colors.redAccent,
                               child: const Icon(
                                 Icons.remove,
@@ -153,7 +181,13 @@ class HomeScreen extends StatelessWidget {
                               width: 10,
                             ),
                             FloatingActionButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+
+                                print(age);
+                              },
                               backgroundColor: Colors.redAccent,
                               child: const Icon(
                                 Icons.add,
@@ -166,6 +200,28 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             )),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const OutputScreen()));
+              },
+              child: Container(
+                width: double.infinity,
+                height: 50,
+                color: Colors.red,
+                child: const Center(
+                  child: Text(
+                    "Calculate",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            )
           ],
         ));
   }
@@ -202,3 +258,4 @@ class ReusedCard extends StatelessWidget {
 }
 
 // Expanded widget
+// GestureDetector widget

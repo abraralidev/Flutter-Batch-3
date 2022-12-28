@@ -11,10 +11,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+      int weight = 20;
+    int age = 10;
+    int height = 120;
+
   @override
   Widget build(BuildContext context) {
-    int weight = 0;
-    int age = 0;
 
     return Scaffold(
         backgroundColor: Colors.black87,
@@ -75,7 +77,54 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
               children: [
                 ReusedCard(
-                  cardchild: Column(),
+                  cardchild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'HEIGHT',
+                          style: TextStyle(
+                            fontSize: 20,
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              height.toString(),
+                              style: const TextStyle(
+                                fontSize: 50,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const Text(
+                              'cm',
+                              style: TextStyle(
+                                fontSize: 20,
+                                // fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Slider(
+                          value: height.toDouble(),
+                          min: 120,
+                          max: 220,
+                          activeColor: Colors.redAccent,
+                          inactiveColor: Colors.white,
+                          onChanged: (double value) {
+                            setState(() {
+                              height = value.round();
+                            });
+                            print(height);
+                          },
+                        ),
+                      ]),
                 )
               ],
             )),

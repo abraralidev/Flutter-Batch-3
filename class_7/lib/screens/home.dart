@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-      int weight = 20;
+    int weight = 20;
     int age = 10;
     int height = 120;
 
